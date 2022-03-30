@@ -1,0 +1,5 @@
+docker run --name=telegraf \
+      -v $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+      -p 5001-5002:5001-5002/tcp \
+	  --net=ltrspg-2161_default \
+      telegraf:1.21.4

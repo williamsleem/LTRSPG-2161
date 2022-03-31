@@ -900,9 +900,7 @@ nodes:
       # configurable user account
       USERNAME=cisco
       PASSWORD=cisco
-      iface eth0 inet static
-          address 198.18.1.142/26
-          gateway 198.18.1.1
+     
 
     hide_links: false
     ram: 512
@@ -920,6 +918,9 @@ nodes:
         slot: 1
         label: eth1
         type: physical
+     port_info:
+      - ip: 198.18.1.142
+        default_gw: 198.18.1.1
 links:
   - id: l0
     i1: i4

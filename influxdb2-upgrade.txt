@@ -1,0 +1,47 @@
+
+
+
+
+
+
+echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list deb https://repos.influxdata.com/ubuntu bionic stable
+sudo apt-get update
+sudo curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install influxdb
+git clone https://github.com/mikemikhail/HOLSPG-2400
+sudo influxd restore -portable -db mdt_db -newdb mdt /home/ubuntu/HOLSPG-2400/data/db_backup_210321
+
+sudo systemctl start influxdb.service
+sudo vi /etc/influxdb/influxdb.conf 
+influx
+CREATE USER admin WITH PASSWORD 'password' WITH ALL PRIVILEGES
+
+> auth
+username: admin
+password: 
+> show databases
+name: databases
+name
+----
+use mdt
+alter retention policy "autogen" on "mdt" duration inf
+
+wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.1.1-linux-amd64.tar.gz
+tar xvfz influxdb2-2.1.1-linux-amd64.tar.gz
+export PATH=~/influxdb2-2.1.1-linux-amd64:$PATH
+
+ps -ef | grep 'bin/influxd'
+sudo kill -s TERM 14623
+sudo chown -R 1000:1000 /avar/lib/influxdb/
+ulimit -n 10240
+influxd upgrade
+export INFLUXD_CONFIG_PATH=/home/ubuntu/.influxdbv2/config.toml 
+influxd &
+wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.2.0-linux-amd64.tar.gz
+tar xvzf ~/influxdb2-client-2.2.0-linux-amd64.tar.gz
+sudo cp influxdb2-client-2.2.0-linux-amd64/influx /usr/local/bin/
+export PATH=/home/ubuntu/influxdb2-2.1.1-linux-amd64:$PATH
+export PATH=/home/ubuntu/influxdb2-client-2.2.0-linux-amd64:$PATH
+sudo mkdir backup
+influx backup /home/ubuntu/backup -t sNlwZoi38tQErnXZE2KrKz4z8jEsUJHzPtSf7jIrhDofvcBhK-Yc9E7llzana2cve8QDzm77l1WEYE-JqdhVxw==

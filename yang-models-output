@@ -1,0 +1,63 @@
+root@ubuntu:/opt# cd /opt/YANG-models/xr-774/
+root@ubuntu:/opt/YANG-models/xr-774# python3 /opt/ncc/ncc-get-all-schema -a 198.18.1.113 -u cisco -p cisco
+
+root@ubuntu:/opt/YANG-models/xr-774# ls -l
+total 21984
+-rw-r--r-- 1 root root  12684 Apr  7 20:11 CISCO-ENTITY-FRU-CONTROL-MIB.yang
+-rw-r--r-- 1 root root  16004 Apr  7 20:09 Cisco-IOS-XR-aaa-aaacore-cfg.yang
+-rw-r--r-- 1 root root   2130 Apr  7 20:10 Cisco-IOS-XR-aaa-diameter-base-mib-cfg.yang
+-rw-r--r-- 1 root root  14661 Apr  7 20:09 Cisco-IOS-XR-aaa-diameter-cfg.yang
+-rw-r--r-- 1 root root  28441 Apr  7 20:10 Cisco-IOS-XR-aaa-diameter-oper-sub1.yang
+-rw-r--r-- 1 root root   4025 Apr  7 20:10 Cisco-IOS-XR-aaa-diameter-oper.yang
+-rw-r--r-- 1 root root   8152 Apr  7 20:08 Cisco-IOS-XR-aaa-lib-cfg.yang
+-rw-r--r-- 1 root root   5882 Apr  7 20:09 Cisco-IOS-XR-aaa-lib-datatypes.yang
+-rw-r--r-- 1 root root  17530 Apr  7 20:09 Cisco-IOS-XR-aaa-locald-cfg.yang
+-rw-r--r-- 1 root root   6867 Apr  7 20:10 Cisco-IOS-XR-aaa-locald-oper-sub1.yang
+-rw-r--r-- 1 root root   3104 Apr  7 20:10 Cisco-IOS-XR-aaa-locald-oper.yang
+-rw-r--r-- 1 root root   6823 Apr  7 20:09 Cisco-IOS-XR-aaa-nacm-cfg.yang
+-rw-r--r-- 1 root root   4135 Apr  7 20:08 Cisco-IOS-XR-aaa-nacm-oper-sub1.yang
+-rw-r--r-- 1 root root   3024 Apr  7 20:08 Cisco-IOS-XR-aaa-nacm-oper.yang
+-rw-r--r-- 1 root root  28654 Apr  7 20:10 Cisco-IOS-XR-aaa-protocol-radius-cfg.yang
+-rw-r--r-- 1 root root  12824 Apr  7 20:08 Cisco-IOS-XR-aaa-protocol-radius-oper-sub1.yang
+
+
+
+
+
+
+root@ubuntu:/opt/YANG-models/xr-774# cd ..
+root@ubuntu:/opt/YANG-models# mkdir xe-17.3.4
+root@ubuntu:/opt/YANG-models# cd xe-17.3.4/
+root@ubuntu:/opt/YANG-models/xe-17.3.4# python3 /opt/ncc/ncc-get-all-schema -a 198.18.1.112 -u cisco -p cisco
+
+
+root@ubuntu:/opt/YANG-models/xe-17.3.4# ls -l
+total 17660
+-rw-r--r-- 1 root root   4701 Apr  7 20:17 ATM-FORUM-TC-MIB.yang
+-rw-r--r-- 1 root root  71538 Apr  7 20:17 ATM-MIB.yang
+-rw-r--r-- 1 root root  38203 Apr  7 20:17 ATM-TC-MIB.yang
+-rw-r--r-- 1 root root  26625 Apr  7 20:17 BGP4-MIB.yang
+-rw-r--r-- 1 root root  39577 Apr  7 20:17 BRIDGE-MIB.yang
+-rw-r--r-- 1 root root  27834 Apr  7 20:17 CISCO-AAA-SERVER-MIB.yang
+-rw-r--r-- 1 root root  10507 Apr  7 20:17 CISCO-AAA-SESSION-MIB.yang
+-rw-r--r-- 1 root root   6232 Apr  7 20:17 CISCO-AAL5-MIB.yang
+-rw-r--r-- 1 root root  14112 Apr  7 20:17 CISCO-ATM-EXT-MIB.yang
+-rw-r--r-- 1 root root  75580 Apr  7 20:17 CISCO-ATM-PVCTRAP-EXTN-MIB.yang
+-rw-r--r-- 1 root root  20140 Apr  7 20:17 CISCO-ATM-QOS-MIB.yang
+-rw-r--r-- 1 root root  89041 Apr  7 20:17 CISCO-BGP4-MIB.yang
+-rw-r--r-- 1 root root   4804 Apr  7 20:17 CISCO-BGP-POLICY-ACCOUNTING-MIB.yang
+-rw-r--r-- 1 root root  14779 Apr  7 20:19 cisco-bridge-common.yang
+-rw-r--r-- 1 root root  34566 Apr  7 20:19 cisco-bridge-domain.yang
+-rw-r--r-- 1 root root  27338 Apr  7 20:17 CISCO-BULK-FILE-MIB.yang
+-rw-r--r-- 1 root root   9799 Apr  7 20:17 CISCO-CBP-TARGET-MIB.yang
+-rw-r--r-- 1 root root   7226 Apr  7 20:17 CISCO-CBP-TARGET-TC-MIB.yang
+-rw-r--r-- 1 root root   4640 Apr  7 20:17 CISCO-CBP-TC-MIB.yang
+-rw-r--r-- 1 root root  29324 Apr  7 20:17 CISCO-CDP-MIB.yang
+-rw-r--r-- 1 root root  97083 Apr  7 20:17 CISCO-CEF-MIB.yang
+-rw-r--r-- 1 root root  16634 Apr  7 20:17 CISCO-CEF-TC.yang
+-rw-r--r-- 1 root root  29458 Apr  7 20:17 CISCO-CONFIG-COPY-MIB.yang
+-rw-r--r-- 1 root root  28377 Apr  7 20:17 CISCO-CONFIG-MAN-MIB.yang
+-rw-r--r-- 1 root root  19802 Apr  7 20:17 CISCO-CONTEXT-MAPPING-MIB.yang
+
+
+

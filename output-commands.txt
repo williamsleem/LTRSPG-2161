@@ -1,0 +1,187 @@
+d113 con0/RP0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/RP0/CPU0:d113#sh isis topology 
+Thu Apr  7 18:22:24.629 UTC
+
+IS-IS ISIS paths to IPv4 Unicast (Level-2) routers
+System Id          Metric    Next-Hop           Interface       SNPA          
+p101               1000      p101               Gi0/0/0/0       *PtoP*        
+p102               1110      p103               Gi0/0/0/1       *PtoP*        
+p103               1010      p103               Gi0/0/0/1       *PtoP*        
+p104               1110      p103               Gi0/0/0/1       *PtoP*        
+s112               1100      s112               tt11312         *PtoP*        
+d113               --      
+d114               1100      d114               tt11314         *PtoP*        
+s123               1110      s123               tt11323         *PtoP*        
+s124               1210      s124               tt11324         *PtoP*        
+s134               1110      s134               tt11334         *PtoP*        
+RP/0/RP0/CPU0:d113#
+
+
+
+#####################
+
+
+RP/0/RP0/CPU0:d113#show mpls traffic-eng tunnels tabular 
+Thu Apr  7 18:25:24.887 UTC
+
+           Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
+             Name    ID         Address         Address  State  State Role  Prot
+----------------- ----- --------------- --------------- ------ ------ ---- -----
+   tunnel-te11312     2   192.168.1.112   192.168.1.113     up  Inact Head Inact
+   tunnel-te11314     2   192.168.1.114   192.168.1.113     up  Inact Head Inact
+   tunnel-te11323     2   192.168.1.123   192.168.1.113     up  Inact Head Inact
+   tunnel-te11324     2   192.168.1.124   192.168.1.113     up  Inact Head Inact
+   tunnel-te11334     2   192.168.1.134   192.168.1.113     up  Inact Head Inact
+          to d113   252   192.168.1.113   192.168.1.112     up  Inact Tail      
+      d114_t11413     2   192.168.1.113   192.168.1.114     up  Inact Tail      
+          to d113   261   192.168.1.113   192.168.1.123     up  Inact Tail      
+          to d113   250   192.168.1.113   192.168.1.124     up  Inact Tail      
+          to d113   259   192.168.1.113   192.168.1.134     up  Inact Tail      
+RP/0/RP0/CPU0:d113#
+
+
+#########################
+
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/RP0/CPU0:d114#sh isis topology 
+Thu Apr  7 18:26:04.852 UTC
+
+IS-IS ISIS paths to IPv4 Unicast (Level-2) routers
+System Id          Metric    Next-Hop           Interface       SNPA          
+p101               1000      p101               Gi0/0/0/0       *PtoP*        
+p102               1210      p104               Gi0/0/0/1       *PtoP*        
+p103               1110      p104               Gi0/0/0/1       *PtoP*        
+p104               1010      p104               Gi0/0/0/1       *PtoP*        
+s112               1100      s112               tt11412         *PtoP*        
+d113               1100      d113               tt11413         *PtoP*        
+d114               --      
+s123               1210      s123               tt11423         *PtoP*        
+s124               1110      s124               tt11424         *PtoP*        
+s134               1110      s134               tt11434         *PtoP*        
+RP/0/RP0/CPU0:d114#
+
+
+##############
+
+
+RP/0/RP0/CPU0:d114#sh mpls traffic-eng tunnels tabular 
+Thu Apr  7 18:27:21.930 UTC
+
+           Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
+             Name    ID         Address         Address  State  State Role  Prot
+----------------- ----- --------------- --------------- ------ ------ ---- -----
+   tunnel-te11412     2   192.168.1.112   192.168.1.114     up  Inact Head Inact
+   tunnel-te11413     2   192.168.1.113   192.168.1.114     up  Inact Head Inact
+   tunnel-te11423     2   192.168.1.123   192.168.1.114     up  Inact Head Inact
+   tunnel-te11424     2   192.168.1.124   192.168.1.114     up  Inact Head Inact
+   tunnel-te11434     2   192.168.1.134   192.168.1.114     up  Inact Head Inact
+          to d114   516   192.168.1.114   192.168.1.112     up  Inact Tail      
+      d113_t11314     2   192.168.1.114   192.168.1.113     up  Inact Tail      
+          to d114   517   192.168.1.114   192.168.1.123     up  Inact Tail      
+          to d114   503   192.168.1.114   192.168.1.124     up  Inact Tail      
+          to d114   520   192.168.1.114   192.168.1.134     up  Inact Tail      
+RP/0/RP0/CPU0:d114#
+
+
+
+################
+
+
+
+RP/0/RP0/CPU0:d113#ping vrf Mgmt-intf 198.18.134.28
+Thu Apr  7 18:28:30.165 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 198.18.134.28, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 5/6/8 ms
+RP/0/RP0/CPU0:d113#
+
+
+###########
+
+
+
+RP/0/RP0/CPU0:d114#ping vrf Mgmt-intf 198.18.134.28
+Thu Apr  7 18:29:17.238 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 198.18.134.28, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 5/6/12 ms
+RP/0/RP0/CPU0:d114#
+
+
+#############
+
+RP/0/RP0/CPU0:d113#configure
+Thu Apr  7 18:30:22.669 UTC
+RP/0/RP0/CPU0:d113(config)#ssh server netconf vrf Mgmt-intf
+RP/0/RP0/CPU0:d113(config)#commit
+Thu Apr  7 18:32:19.791 UTC
+RP/0/RP0/CPU0:d113(config)#
+
+######
+
+
+s124#show platform software yang-management process 
+confd            : Not Running
+nesd             : Not Running
+syncfd           : Not Running
+ncsshd           : Not Running
+dmiauthd         : Not Running
+nginx            : Running    
+ndbmand          : Not Running
+pubd             : Running    
+
+s124#
+
+#######
+
+s124#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+s124(config)#netconf-yang
+s124(config)#end
+*Apr  7 18:35:43.363: %PSD_MOD-5-DMI_NOTIFY_NETCONF_START: R0/0: psd: PSD/DMI: netconf-yang server has been notified to start
+s124(config)#end
+s124#wr
+*Apr  7 18:35:46.007: %SYS-5-CONFIG_I: Configured from console by console
+s124#write memory
+Building configuration...
+[OK]
+s124#show platform software yang-management process
+confd            : Running    
+nesd             : Running    
+syncfd           : Running    
+ncsshd           : Running    
+dmiauthd         : Running    
+nginx            : Running    
+ndbmand          : Running    
+pubd             : Running    
+
+s124#
+
+
+###############
+
+
+

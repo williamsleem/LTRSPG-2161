@@ -1,0 +1,38 @@
+import socket
+import random
+import string
+
+UDP_IP_LIST = ["127.0.0.1","2.2.2.2","10.10.10.10"]
+UDP_PORT = 5005
+MESSAGE = "Hello!"
+
+
+
+#sock = socket.socket(socket.AF_INET, # Internet
+#                    socket.SOCK_DGRAM) # UDP
+#sock.sendto(MESSAGE.encode(), (UDP_IP, UDP_PORT))
+
+def choose_random_ip():
+    return random.choice(UDP_IP_LIST)
+
+def random_size():
+    return random.randint(1,12)
+
+def message_generator(size=random_size(), chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+def socket_creation():
+    sock = socket.socket(socket.AF_INET, # Internet
+                     socket.SOCK_DGRAM) #UDP
+    sock.sendto(message_generator().encode(), (choose_random_ip(), UDP_PORT))
+
+    return 
+
+def main():
+    socket_creation()
+    
+    
+
+if __name__ == "__main__":
+
+   

@@ -61,3 +61,92 @@ total 17660
 
 
 
+
+root@ubuntu:/opt/YANG-models/xr-774# pyang -f tree --tree-depth 6 Cisco-IOS-XR-ipv4-bgp-oper.yang | more
+module: Cisco-IOS-XR-ipv4-bgp-oper
+  +--ro bgp
+     +--ro config-instances
+     |  +--ro config-instance* [instance-name]
+     |     +--ro config-instance-default-vrf
+     |     |  +--ro entity-configurations
+     |     |  |  +--ro entity-configuration* []
+     |     |  |        ...
+     |     |  +--ro configuration-users
+     |     |  |  +--ro configuration-user* []
+     |     |  |        ...
+     |     |  +--ro configuration-inheritances
+     |     |     +--ro configuration-inheritance* []
+     |     |           ...
+     |     +--ro config-vrfs
+     |     |  +--ro config-vrf* [vrf-name]
+     |     |     +--ro vrf-name                      xr:Cisco-ios-xr-string
+     |     |     +--ro entity-configurations
+     |     |     |     ...
+     |     |     +--ro configuration-users
+     |     |     |     ...
+     |     |     +--ro configuration-inheritances
+     |     |           ...
+     |     +--ro instance-name                  xr:Cisco-ios-xr-string
+     +--ro instances
+     |  +--ro instance* [instance-name]
+     |     +--ro instance-active
+     |     |  +--ro segment-routing
+     |     |  |  +--ro srv6
+     |     |  |        ...
+     |     |  +--ro label-entries
+--More--
+
+
+#############
+
+
+
+root@ubuntu:/opt/YANG-models/xr-774# pyang -f tree Cisco-IOS-XR-infra-statsd-oper.yang | more
+module: Cisco-IOS-XR-infra-statsd-oper
+  +--ro infra-statistics
+     +--ro interfaces
+        +--ro interface* [interface-name]
+           +--ro cache
+           |  +--ro protocols
+           |  |  +--ro protocol* [protocol-name]
+           |  |     +--ro protocol-name         xr:Cisco-ios-xr-string
+           |  |     +--ro bytes-received?       uint64
+           |  |     +--ro packets-received?     uint64
+           |  |     +--ro bytes-sent?           uint64
+           |  |     +--ro packets-sent?         uint64
+           |  |     +--ro protocol?             uint32
+           |  |     +--ro last-data-time?       uint64
+           |  |     +--ro input-data-rate?      uint64
+           |  |     +--ro input-packet-rate?    uint64
+           |  |     +--ro output-data-rate?     uint64
+           |  |     +--ro output-packet-rate?   uint64
+           |  |     +--ro hardware-timestamp?   uint64
+           |  +--ro interfaces-mib-counters
+           |  |  +--ro packets-received?                    uint64
+           |  |  +--ro bytes-received?                      uint64
+           |  |  +--ro packets-sent?                        uint64
+           |  |  +--ro bytes-sent?                          uint64
+           |  |  +--ro multicast-packets-received?          uint64
+           |  |  +--ro broadcast-packets-received?          uint64
+           |  |  +--ro multicast-packets-sent?              uint64
+           |  |  +--ro broadcast-packets-sent?              uint64
+           |  |  +--ro output-drops?                        uint32
+           |  |  +--ro output-queue-drops?                  uint32
+           |  |  +--ro input-drops?                         uint32
+           |  |  +--ro input-queue-drops?                   uint32
+           |  |  +--ro runt-packets-received?               uint32
+           |  |  +--ro giant-packets-received?              uint32
+           |  |  +--ro throttled-packets-received?          uint32
+           |  |  +--ro parity-packets-received?             uint32
+           |  |  +--ro unknown-protocol-packets-received?   uint32
+           |  |  +--ro input-errors?                        uint32
+           |  |  +--ro crc-errors?                          uint32
+--More--
+
+
+#################
+
+
+
+
+

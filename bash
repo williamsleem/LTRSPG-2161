@@ -16,3 +16,9 @@ Wed Apr 13 18:13:09.979 UTC
 Warning: bad ps syntax, perhaps a bogus '-'? See http://procps.sf.net/faq.html
 root      7853  0.0  0.0  16248   940 pts/10   Sl+  18:17   0:00 grep traffic
 [xr-vm_node0_RP0_CPU0:~]$
+
+[xr-vm_node0_RP0_CPU0:~]$./traffic.sh
+# netconf_client_ztp_lib - version 1.2 #
+[xr-vm_node0_RP0_CPU0:~]$# netconf_client_ztp_lib - version 1.2 #
+# netconf_client_ztp_lib - version 1.2 #
+# netconf_client_ztp_lib - version 1.2 #

@@ -1,0 +1,126 @@
+RP/0/RP0/CPU0:d114#
+RP/0/RP0/CPU0:d114#conf t
+Tue May  3 12:41:12.742 UTC
+RP/0/RP0/CPU0:d114(config)#adt enable 
+RP/0/RP0/CPU0:d114(config)#commit
+Tue May  3 12:42:19.399 UTC
+
+
+RP/0/RP0/CPU0:d114#sh adt subscription details 
+Tue May  3 12:55:20.903 UTC
+
+ADT SUBSCRIPTION  Details
+[Subscription ID, Cadence(in seconds), (E)xplicit/(I)mplicit] Sensor Path
+*Subscription ID = 0: Not enough system resources to subscribe
+
+Active Groups : 1
+
+    Group: implicit                 
+    -----------------------------------------
+        [300000001,  60, I] Cisco-IOS-XR-telemetry-model-driven-oper:telemetry-model-driven/subscriptions/subscription
+        [300000002,  60, I] Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization[node-name="0/RP0/CPU0"]
+        [300000003,  60, I] Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node[node-name="0/RP0/CPU0"]/summary
+        [300000004,  60, I] Cisco-IOS-XR-procmem-oper:processes-memory/nodes/node[node-name="0/RP0/CPU0"]/process-ids/process-id[process-id="2124"]
+        [300000005,  20, I] Cisco-IOS-XR-pfi-im-cmd-oper:interfaces/node-type-sets/node-type-set/interface-summary
+        [300000006,  20, I] Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface[interface-name=".*(GigE|Ethernet)([0-9/\.]*)$"]/latest/generic-counters
+        [300000007,  20, I] Cisco-IOS-XR-ip-iarm-v4-oper:ipv4arm/vrf-summaries
+        [300000008,  20, I] Cisco-IOS-XR-ipv4-arp-oper:arp/nodes/node/traffic-vrfs/traffic-vrf
+        [300000009,  20, I] Cisco-IOS-XR-ip-iarm-v4-oper:ipv4arm/addresses/vrfs/vrf/interfaces
+        [30000000a,  20, I] Cisco-IOS-XR-ip-iarm-v4-oper:ipv4arm/addresses/vrfs/vrf/networks
+        [30000000b,  20, I] Cisco-IOS-XR-ip-iarm-v4-oper:ipv4arm/router-id
+        [30000000c,  20, I] Cisco-IOS-XR-ipv4-io-oper:ipv4-network/nodes/node/statistics/traffic
+        [30000000d,  20, I] Cisco-IOS-XR-ip-rib-ipv4-oper:rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/protocol/isis/as/information
+        [30000000e,  20, I] Cisco-IOS-XR-ipv4-bgp-oc-oper:oc-bgp/bgp-rib/afi-safi-table/ipv4-unicast/open-config-neighbors/open-config-neighbor/adj-rib-in-post/num-routes
+        [30000000f,  20, I] Cisco-IOS-XR-ip-rib-ipv4-oper:rib/vrfs/vrf/afs/af/safs/saf/ip-rib-route-table-names/ip-rib-route-table-name/protocol/bgp/as/information
+        [300000010,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-te/affinity-map
+        [300000011,  20, I] Cisco-IOS-XR-fib-common-oper:mpls-forwarding/nodes/node/forwarding-summary
+        [300000012,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-lcac/admission-control
+        [300000013,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-te/p2mp/tunnel-rewrites
+        [300000014,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-te/tunnels/summary
+        [300000015,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-te/bfd/summary
+        [300000016,  20, I] Cisco-IOS-XR-mpls-te-oper:mpls-te/fast-reroute
+        [300000017,  20, I] Cisco-IOS-XR-fib-common-oper:fib/nodes/node/global/summary/protos/proto
+        [300000018,  20, I] Cisco-IOS-XR-fib-common-oper:fib-statistics/nodes/node/drops
+        [300000019,  20, I] Cisco-IOS-XR-ip-tcp-oper:tcp/nodes/node/statistics/ipv6-traffic
+        [30000001a,  20, I] Cisco-IOS-XR-ip-tcp-oper:tcp/nodes/node/statistics/ipv4-traffic
+        [30000001b,  20, I] Cisco-IOS-XR-ip-udp-oper:udp/nodes/node/statistics/ipv4-traffic
+        [30000001c,  20, I] Cisco-IOS-XR-ip-udp-oper:udp/nodes/node/statistics/ipv6-traffic
+
+Missed groups = 0
+RP/0/RP0/CPU0:d114#
+
+Missed groups = 0
+RP/0/RP0/CPU0:d114#sh adt events 
+Tue May  3 13:07:33.264 UTC
+
+|-------------------------------------------------------------------------------|
+| Number of Events :      1                                                     |
+|-------------------------------------------------------------------------------|
+|  Event id |                   Timestamp | Description                         |
+|-------------------------------------------------------------------------------|
+|    103001 |  Tue 2022-05-03 13:02:25:308|            Addressing & Reachability|
+|-------------------------------------------------------------------------------|
+RP/0/RP0/CPU0:d114#sh adt events id 103001 detail 
+Tue May  3 13:07:43.919 UTC
+ Event Id             : 103001
+ Timestamp            : Tue 2022-05-03 13:02:25:308
+ Description          : Addressing & Reachability
+ Number of Sensor paths : 6
+    Sensor Path      : Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters//bytes-sent
+    Sensor Path Tags : interface-name=GigabitEthernet0/0/0/0
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 3209658, 3210830, 3212188, 3729741, 4446625, 5582471, 6007710, 
+                  6008902, 6010128, 6011107, 6012507, 6013637, 6150866, 6151934, 
+                  6153258, 6505133, 6538461, 6791809, 7410704, 7411758, 8107186, 
+                  8108719, 8213921, 8215785, 8216664, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
+
+    Sensor Path      : Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters//bytes-received
+    Sensor Path Tags : interface-name=GigabitEthernet0/0/0/1
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 2555412, 2559133, 2562274, 3080170, 3795399, 4487620, 4490641, 
+                  4494440, 4791137, 4794395, 4797878, 4800861, 4804711, 4807735, 
+                  4811117, 5163333, 5199322, 5453091, 6359349, 6362430, 6366043, 
+                  6369639, 6372426, 6377464, 6380077, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
+
+    Sensor Path      : Cisco-IOS-XR-ipv4-io-oper:ipv4-network/nodes/node/statistics/traffic//ipv4-stats/input-packets
+    Sensor Path Tags : node-name=0/0/CPU0
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 428, 428, 428, 428, 
+                  428, 428, 428, 428, 428, 428, 756, 756, 756, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
+
+    Sensor Path      : Cisco-IOS-XR-ipv4-io-oper:ipv4-network/nodes/node/statistics/traffic//ipv4-stats/received-packets
+    Sensor Path Tags : node-name=0/0/CPU0
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 428, 428, 428, 428, 
+                  428, 428, 428, 428, 428, 428, 756, 756, 756, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
+
+    Sensor Path      : Cisco-IOS-XR-ipv4-io-oper:ipv4-network/nodes/node/statistics/traffic//icmp-stats/received
+    Sensor Path Tags : node-name=0/0/CPU0
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 428, 428, 428, 428, 
+                  428, 428, 428, 428, 428, 428, 756, 756, 756, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
+
+    Sensor Path      : Cisco-IOS-XR-ipv4-io-oper:ipv4-network/nodes/node/statistics/traffic//ipv4-stats/options-present
+    Sensor Path Tags : node-name=0/RP0/CPU0
+    Message          : 
+        Number of entries in list: 25
+        Value : [ 370, 378, 382, 389, 396, 404, 412, 417, 425, 431, 437, 443, 
+                  449, 455, 463, 468, 475, 481, 487, 493, 499, 507, 511, 519, 
+                  523, ]
+        First Timestamp : Tue 2022-05-03 12:58:25:306 [1651582705306]
+        Last Timestamp  : Tue 2022-05-03 13:06:25:309 [1651583185309]
